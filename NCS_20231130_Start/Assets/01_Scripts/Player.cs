@@ -89,12 +89,15 @@ public class Player : MonoBehaviour
             {
                 IsDraw = false;
                 anim.SetTrigger("Holster");
+                SetDraw(-1);
             }
             else //총을 장착중이지 않아서 장착 진행할 것임.
             {
                 IsDraw = true;
                 anim.SetTrigger("Draw");
+                SetDraw(1);
             }
+
         }
 
         //왼쪽 마우스 클릭하면 총을 발사할 것이고
@@ -128,11 +131,13 @@ public class Player : MonoBehaviour
     {
         if (val == 1)
         {
+            Debug.Log("총손");
             //총을 손밑으로 달아줘야됨
             PistolTr.SetParent(handTr);            
         }
         else if(val == -1)
         {
+            Debug.Log("총홀스터");
             //총을 홀스터 밑으로 달아줘야함.
             PistolTr.SetParent(holsterTr);            
         }

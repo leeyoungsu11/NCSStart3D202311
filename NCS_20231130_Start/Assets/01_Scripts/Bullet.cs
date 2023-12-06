@@ -14,12 +14,16 @@ public class Bullet : MonoBehaviour
     public void Init(Transform parentTr, float damage, AllEnum.Type type)
     {
         gameObject.SetActive(true); //사실 밖에서 해주는게 더 나음.
+        
+        //상속시켜서 세팅하는 방법
+        //transform.parent = parentTr;
+        //transform.localPosition = Vector3.zero;
+        //transform.localRotation = Quaternion.identity;
+        //transform.parent = null; //상관관계를 해제 시켜줘야...
 
-        transform.parent = parentTr;
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
-
-        transform.parent = null; //상관관계를 해제 시켜줘야...
+        //그냥 그 값만 받아와서 세팅하는 방법
+        transform.position = parentTr.position;
+        transform.rotation = parentTr.rotation;
 
         if (rigid == null)
         {
