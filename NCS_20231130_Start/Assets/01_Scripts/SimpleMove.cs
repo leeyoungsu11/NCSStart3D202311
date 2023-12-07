@@ -6,9 +6,9 @@ public class SimpleMove : MonoBehaviour
 {
     float x = 0;
     float z = 0;
-    float angle = 0;
+    //float angle = 0;
     Vector3 moveVec = Vector3.zero;
-    Vector3 speedVec = Vector3.zero;
+    //Vector3 speedVec = Vector3.zero;
     Rigidbody rigid;
     bool isJump = false;
 
