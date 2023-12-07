@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,13 +30,16 @@ public class AgentMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         x = Input.GetAxisRaw("Horizontal");
         z = Input.GetAxisRaw("Vertical");
 
         mVec.x = x;
         mVec.z = z;
-        transform.Translate(mVec.normalized * Time.deltaTime*10);
-        
+        transform.Translate(mVec.normalized * Time.deltaTime*10, Space.World);
+        //transform.LookAt(transform.position + mVec);
+        //transform.position += mVec * 5 * Time.deltaTime;
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -84,4 +88,5 @@ public class AgentMove : MonoBehaviour
         //yield return new WaitForSeconds(3);
     }
 
+    
 }
