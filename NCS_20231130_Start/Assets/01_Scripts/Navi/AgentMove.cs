@@ -37,9 +37,16 @@ public class AgentMove : MonoBehaviour
 
         mVec.x = x;
         mVec.z = z;
-        transform.Translate(mVec.normalized * Time.deltaTime*10, Space.World);
+
+        transform.Translate(mVec.normalized * Time.deltaTime * 10, Space.World);
+        transform.Translate(mVec.normalized * Time.deltaTime * 10, Space.Self);
+
+        transform.position += mVec * 5 * Time.deltaTime;
+        
+        
         transform.LookAt(transform.position + mVec);
-        //transform.position += mVec * 5 * Time.deltaTime;
+
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
