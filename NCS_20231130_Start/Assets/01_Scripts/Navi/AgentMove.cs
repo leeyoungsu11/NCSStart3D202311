@@ -39,9 +39,9 @@ public class AgentMove : MonoBehaviour
         mVec.z = z;
 
         transform.Translate(mVec.normalized * Time.deltaTime * 10, Space.World);
-        transform.Translate(mVec.normalized * Time.deltaTime * 10, Space.Self);
+        //transform.Translate(mVec.normalized * Time.deltaTime * 10, Space.Self);
 
-        transform.position += mVec * 5 * Time.deltaTime;
+        //transform.position += mVec * 5 * Time.deltaTime;
         
         
         transform.LookAt(transform.position + mVec);

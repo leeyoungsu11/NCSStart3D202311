@@ -39,4 +39,14 @@ public class GameManager : Singleton<GameManager>
         bullet.transform.SetParent(this.transform);
         bullet.gameObject.SetActive(false);
     }
+
+    public Vector3 GetNextPatrol(int parentNum, ref int nowPatterol,bool Next)
+    {
+        if(Next)
+        {
+            nowPatterol++;
+            return Vector3.zero;
+        }
+        return Vector3.zero;
+    }
 }
